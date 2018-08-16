@@ -32,7 +32,7 @@ channels:
         ledgerQuery: 设置账本查询权限，默认false
         eventSource: 设置事件权限，默认false
 organizations:
-  tiger.fx.com:
+  自定义用户组织名称:
     mspid: 用户组织自定义mspid
     cryptoPath: 用户组织自定义用户账户mspid
     peers:
