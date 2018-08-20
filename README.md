@@ -1,45 +1,45 @@
 # explorer-service
 
-## 准备密钥文件
+## Prepare cryptographic files
 ```
-请参照DTN-docs说明，生成密钥文件certs
+Please refer to the DTN-docs instructions to generate the cryptographic files:certs.
 ```
-## 准备配置信息
+## Prepare configuration information
 
 ### conf
 ```
-进程运行监听的端口信息
-httpport = 8080
+Configuration file of port information for process operation monitoring：app.conf
+eg.httpport = 8080
 ```
 ### sdk.yaml.j2
 ```
-根据配置模版sdk.yaml.j2
-修改如下信息，得到sdk.yaml
+According to the configuration template:sdk.yaml.j2
+Modify the following information to get sdk.yaml
 client:
-	organization:修改为自定义节点名称
+	organization:Custom Org Name
 tlsCerts:
 	client:
 		key:
-			path:用户账户的私钥存放路径
+			path:Private key storage path for user
 		cert:
-			path:用户账户的公钥证书存放路径
+			path:Public key certificate storage path for user 
 channels:
 	tradechannel:
 	peers:
-		用户节点自定义名称
-		endorsingPeer: 设置背书权限，默认false
-        chaincodeQuery: 设置合约查询权限，默认false
-        ledgerQuery: 设置账本查询权限，默认false
-        eventSource: 设置事件权限，默认false
+		Custom Peer Name
+		endorsingPeer: Set up endorsement authority，default:false
+        chaincodeQuery: Set up contract query authority，default:false
+        ledgerQuery: Set up account query authority，default:false
+        eventSource: Set event permissions，default:false
 organizations:
-  自定义用户组织名称:
-    mspid: 用户组织自定义mspid
-    cryptoPath: 用户组织自定义用户账户mspid
+  Custom Org Name:
+    mspid: Custom Org mspid
+    cryptoPath: Custom Org-User mspid
     peers:
-      - 用户节点自定义名称
+      - Custom Peer Name
 peers:
-  用户节点自定义名称:
-    url: 用户节点自定义名称:监听端口，建议7051
-    eventUrl: 用户节点自定义名称:监听端口，建议7053
-    tlsCACerts: 用户节点的tls证书存放路径
+  Custom Peer Name:
+    url: Custom Peer Name:Port，proposal 7051
+    eventUrl: Custom Peer Name:Port，proposal 7053
+    tlsCACerts: Custom Peer tlsca path
 ```
