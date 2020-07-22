@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/TigerWit/explorer-service"
+	_ "explorer-service/routers"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/plugins/cors"
 )
